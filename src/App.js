@@ -8,13 +8,13 @@ export default function App() {
   const [goals, setGoals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/goals")
+    fetch("https://codechallenge2-rsar.onrender.com/goals/")
       .then((res) => res.json())
       .then((data) => setGoals(data));
   }, []);
 
   const addGoal = (goal) => {
-    fetch("http://localhost:3000/goals", {
+    fetch("https://codechallenge2-rsar.onrender.com/goals/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(goal),
@@ -24,7 +24,7 @@ export default function App() {
   };
 
   const updateGoal = (id, updatedFields) => {
-    fetch(`http://localhost:3000/goals/${id}`, {
+    fetch(`https://codechallenge2-rsar.onrender.com/goals/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedFields),
